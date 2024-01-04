@@ -175,6 +175,12 @@ p:last-child {
     .container-sm,
     .container-xl {
         padding: 0;
-        max-width: 1200px !important;
+        max-width: 1290px !important;
     }
+}
+
+.grid-2{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    flex-wrap: wrap;
 }
