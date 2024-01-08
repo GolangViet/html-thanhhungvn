@@ -21,10 +21,19 @@ const mainApp = (function () {
         });
     };
 
+    const btnSearchClick = () =>{
+        const btnSearch = document.querySelector(".btn__search");
+        btnSearch.addEventListener('click', function(e){
+            e.preventDefault();
+            alert(1);
+        });
+    };
+
 
     return {
         init: function () {
             tabCategoryMenuHover();
+            btnSearchClick();
         },
     };
 })();
