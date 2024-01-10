@@ -1,6 +1,9 @@
-
+const htmlEl =  document.querySelector('html');
+const searchDropdown = document.querySelector('.search__dropdown');
+const searchOpen = document.querySelector('.search-opened');
+const btnSearch = document.querySelector(".btn__search");
 const mainApp = (function () {   
-
+    
     const tabCategoryMenuHover = () => {
         const verticalNavItems = document.querySelectorAll('.category_menu_item');      
         verticalNavItems.forEach(item => {
@@ -21,19 +24,39 @@ const mainApp = (function () {
         });
     };
 
+    
     const btnSearchClick = () =>{
-        const btnSearch = document.querySelector(".btn__search");
+       
         btnSearch.addEventListener('click', function(e){
-            e.preventDefault();
-            alert(1);
+            e.preventDefault();            
+            htmlEl.classList.toggle('search-opened');
+            this.classList.toggle("open");
+            searchDropdown.classList.toggle("active");
         });
     };
 
+    const closeSearchDropdown = () => {
+        document.addEventListener('click', function (e) {
+            if (htmlEl.classList.contains("search-opened")){
+                closeSideNav(e);
+            }            
+        });
+    }
+
+    const closeSideNav = function (e) {       
+        if (!searchDropdown.contains(e.target) && !btnSearch.contains(e.target)) {
+            htmlEl.classList.toggle('search-opened');
+            btnSearch.classList.toggle("open");
+            searchDropdown.classList.toggle("active");
+        }
+    };
+    
 
     return {
         init: function () {
             tabCategoryMenuHover();
             btnSearchClick();
+            closeSearchDropdown();
         },
     };
 })();

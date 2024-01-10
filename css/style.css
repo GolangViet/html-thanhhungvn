@@ -19,6 +19,9 @@ body{
 /**
  * default class
  */
+.position-static{
+    position: static!important;
+}
 .tx-center{
     text-align: center;
 }
@@ -309,6 +312,7 @@ body{
 
 .header-wrapper{
     position: relative;
+    background-color: var(--white);
 }
 
 /* --- navigation --- */
@@ -369,6 +373,7 @@ body{
     border-top: 1px solid #e6e3f14f;
     box-shadow: var(--shadow-1);
     background-color: var(--white);
+    z-index: 5;
 }
 .category_wrapper:hover .category-dropdown{
     top: 100%;
@@ -464,21 +469,135 @@ body{
     gap: 1em;
 }
 
-.nav__menus li{
-    height: 4.2em;
+.nav__menus > li{
+    height: 6em;
     display: flex;
     align-items: center;
     color: rgba(var(--black-rgb),0.7);
     font-weight: 500;
+    position: relative;
 }
 
-.nav__menus li a,.nav__menus li a i{
+.nav__menus > li > a{
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.nav__menus > li > a,.nav__menus > li > a i{
     font-size: 1.4em;
+}
+
+.btn-all-menu{
+    background-color: transparent;
+    border: none;
+    margin: 0;
+    padding: 3px;
+    position: relative;
+    cursor: pointer;
+    width: 2.5em;
+    height: 2.5em;
+    z-index: 1;
+}
+.btn-all-menu:hover{
+    color: var(--red);
+}
+.btn-all-menu:hover::before{
+    opacity: 1;
+    transform: scale(1);
+}
+
+.btn-all-menu::before{
+    background-color: rgba(var(--black-rgb), 0.2);
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    transform: scale(0.8);
+    border-radius: 100%;  
+    transition: var(--transition);
+    z-index: -1;
+}
+
+.btn-all-menu >i{
+    color: rgba(var(--black-rgb),0.6);
+    font-size: 1.3em;
+}
+
+/* --- sub mega menu --- */
+.with-megamenu:hover .megamenu{
+    top: 100%;
+    visibility: visible;
+    opacity: 1;
+    clip: rect(0px, 100vw, 200vh, -30px);
+    transition: clip 0.6s linear, opacity 0.4s linear;
+}
+
+.megamenu{
+    font-size: 1rem;   
+    margin: 0px auto;
+    position: absolute;
+    top:100%;
+    left: 0;
+    right: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.4s linear, clip 0.6s linear, visibility 0s 0.4s;
+    transform: translateZ(0);
+  
+}
+.megamenu--grid3{
+    width: 90em;
+}
+.megamenu__wrapper{
+    padding: 2em;
+    background-color: var(--white);
+}
+.megamenu--grid3 .megamenu__wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2em;
+}
+.megamenu__item__img img{
+    border-radius: 5px;
+}
+.megamenu__item__title{
+    font-size: 1.3em;
+    padding-bottom: 1em;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    opacity: 0.5;
+    margin-bottom: 6px;
+    border-bottom: 1px solid var(--color-border);
+    color: rgba(var(--black-rgb),0.7);
+}
+.megamenu__item__list{
+    font-size: 1rem;  
+    margin-top: 2em;
+}
+
+.megamenu__item__list >li >a{
+    color: rgba(var(--black-rgb),0.6);
+    padding: 0.6em 0px;
+    font-size: 1.4em;
+    transition: var(--transition);
+    width: 100%;
+    display: inline-block;
+    border-radius: 6px;
+}
+.megamenu__item__list >li >a:hover{
+    color: var(--red);
+    background-color: rgba(var(--black-rgb),0.05);
 }
 
 .nabar_right{
     display: flex;
     align-items: center;
+    gap: 0.5rem;
 }
 .btn__search{
     font-size: 1rem;
@@ -521,6 +640,8 @@ body{
     opacity: 1;
     transform: scale(1);
 }
+
+
 
 .nabar__price{
     display: flex;
@@ -677,7 +798,7 @@ body{
 .search__list{
     font-size: 1rem;
     margin-top: 2em;
-    margin-bottom: 2em;
+    margin-bottom: 5em;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -714,4 +835,25 @@ body{
     box-shadow: 19px 20px 34px 0 rgba(164, 160, 196, 0.19);
     background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #dddbdb 100%);
     pointer-events: none;
+}
+
+/* --- event search dropdown --- */
+.search-opened body::before {
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(15px);
+}
+.search-opened body::before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(15px);
+    z-index: -1;
+    transition: all 0.7s;
+}
+.btn__search.open .ri-search-2-line::before{
+    content: "\eb98";
 }
