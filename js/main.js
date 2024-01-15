@@ -3,6 +3,29 @@ const searchDropdown = document.querySelector('.search__dropdown');
 const searchOpen = document.querySelector('.search-opened');
 const btnSearch = document.querySelector(".btn__search");
 const mainApp = (function () {   
+
+    // header sticky
+    const headerSticky = () => {
+
+        const body = document.body;
+        const headerContainer =  document.querySelector(".header-wrapper");
+        const headerTop = document.querySelector(".header-top");
+        const headerContainerHeight = headerContainer.offsetHeight;
+        const topHeaderHeight = headerTop.offsetHeight ||0;
+        const targetScroll = topHeaderHeight + 200;
+
+
+        window.addEventListener('scroll', function () {
+            if (!body.classList.contains('zp-header-sticky')) return; // Early exit for efficiency
+            console.log(targetScroll,window.scrollY);
+            if(window.scrollY > targetScroll){
+                headerContainer.classList.add('zp-sticky');
+            }else{
+                headerContainer.classList.remove('zp-sticky');
+            }
+
+        });
+    };
     
     const tabCategoryMenuHover = () => {
         const verticalNavItems = document.querySelectorAll('.category_menu_item');      
@@ -23,7 +46,6 @@ const mainApp = (function () {
           });
         });
     };
-
     
     const btnSearchClick = () =>{
        
@@ -57,6 +79,7 @@ const mainApp = (function () {
             tabCategoryMenuHover();
             btnSearchClick();
             closeSearchDropdown();
+            headerSticky();
         },
     };
 })();

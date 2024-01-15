@@ -188,3 +188,7 @@ p:last-child {
     grid-template-columns: 1fr 1fr;
     flex-wrap: wrap;
 }
+
+.d-flex{
+    display: flex;
+}
