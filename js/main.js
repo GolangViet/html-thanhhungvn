@@ -2,11 +2,11 @@ const htmlEl =  document.querySelector('html');
 const searchDropdown = document.querySelector('.search__dropdown');
 const searchOpen = document.querySelector('.search-opened');
 const btnSearch = document.querySelector(".btn__search");
+
 const mainApp = (function () {   
 
     // header sticky
     const headerSticky = () => {
-
         const body = document.body;
         const headerContainer =  document.querySelector(".header-wrapper");
         const headerTop = document.querySelector(".header-top");
@@ -14,16 +14,13 @@ const mainApp = (function () {
         const topHeaderHeight = headerTop.offsetHeight ||0;
         const targetScroll = topHeaderHeight + 200;
 
-
         window.addEventListener('scroll', function () {
             if (!body.classList.contains('zp-header-sticky')) return; // Early exit for efficiency
-            console.log(targetScroll,window.scrollY);
             if(window.scrollY > targetScroll){
                 headerContainer.classList.add('zp-sticky');
             }else{
                 headerContainer.classList.remove('zp-sticky');
             }
-
         });
     };
     
@@ -47,8 +44,7 @@ const mainApp = (function () {
         });
     };
     
-    const btnSearchClick = () =>{
-       
+    const btnSearchClick = () =>{       
         btnSearch.addEventListener('click', function(e){
             e.preventDefault();            
             htmlEl.classList.toggle('search-opened');
@@ -72,7 +68,46 @@ const mainApp = (function () {
             searchDropdown.classList.toggle("active");
         }
     };
+
+    const mbMenusBar = () =>{
+        const btnMbMenusbar = document.querySelector(".menus__bar");
+        const mbMenus = document.querySelector(".mb__menus"); 
+        const mbMenuClose = document.querySelector(".mb__menus__close"); 
+        const mbMenuWrapper = document.querySelector(".mb__menus__wrapper");
+        btnMbMenusbar.addEventListener('click', function(e){
+            mbMenus.classList.toggle('active');
+        });        
+        mbMenuClose.addEventListener('click', function(e){
+            mbMenus.classList.toggle('active');
+        });
+
+        mbMenus.addEventListener('click', function(e){
+            if(!mbMenuWrapper.contains(e.target)){
+                mbMenus.classList.toggle('active');
+            }
+        });
+    }
     
+    const mbMenuChildren = () => {
+        const mbChilder = document.querySelectorAll(".mb__children");
+        mbChilder.forEach(function (item) {
+            item.addEventListener("click", function (evt) {  
+                var menuBarSub = evt.currentTarget.querySelector(".mb__menubar__sub");
+                if (menuBarSub.contains(evt.target)){
+                    return;
+                }
+                var flag = evt.currentTarget.classList.contains('open');               
+                if (flag){
+                    evt.currentTarget.classList.remove('open');
+                }else{
+                    mbChilder.forEach(function (mb) {
+                        mb.classList.remove('open');
+                    });
+                    evt.currentTarget.classList.add('open');
+                }
+            });
+        });        
+    }
 
     return {
         init: function () {
@@ -80,6 +115,8 @@ const mainApp = (function () {
             btnSearchClick();
             closeSearchDropdown();
             headerSticky();
+            mbMenusBar();
+            mbMenuChildren();
         },
     };
 })();

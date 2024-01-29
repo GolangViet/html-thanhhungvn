@@ -10,6 +10,9 @@
         font-size: 50%;
         overflow-x: hidden;
     }
+    .menus__bar{
+        display: block;
+    }
     .mb-hidden{
         display: none;
     }
@@ -34,7 +37,26 @@
         top:50%;
         left: 50%;
         transform: translate(-50%,-50%);
-    }    
+    }   
+    .search__title {
+        font-size: 1.3em;
+    }
+    .search__keyword__blank{
+        display: none;
+    }
+    .search__list__keyword{
+        gap: 1em;
+    }
+    .search__list__keyword a{
+        font-size: 1em;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+    }
+
+ 
 }
 
 @media only screen and (min-width: 769px) and (max-width: 991px) {
