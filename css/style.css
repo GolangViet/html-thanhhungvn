@@ -550,7 +550,7 @@ body{
     display: flex;
     align-items: center;
     color: rgba(var(--black-rgb),0.7);
-    font-weight: 500;
+    font-weight: 600;
     position: relative;
 }
 
@@ -1502,4 +1502,72 @@ body{
 .mb__socials > li>a:hover::before {
     opacity: 1;
     transform: scale(1);
+}
+/* --- footer --- */
+.footer__wrapper{
+    font-size: 1rem;
+    padding: 2em 0;
+}
+.footer__logo img{
+    height: 4em;
+    width: auto;
+}
+
+.footer__list{
+    margin: 1em 0px;
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr 2fr;
+    gap: 1em;
+}
+.footer__item{
+    color: rgba(var(--black-rgb), 0.7); 
+}
+.footer__item >p{
+    font-size: 1.4em;
+    text-align: justify;   
+}
+
+.footer__item__company{
+    margin-bottom: 1em;
+}
+.footer__item__company >h3{
+    font-size: 1.6em;
+    color:  rgba(var(--black-rgb), 0.5); 
+    text-transform: uppercase;
+    margin-bottom: 0.5em;
+}
+
+.footer__item__company >ul{
+    font-size: 1rem;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+.footer__item__company >ul>li{
+    font-size: 1.3em;
+    display: flex;
+    align-items: center;
+}
+
+.footer__item__company >ul>li>strong{
+    color: rgba(var(--black-rgb), 0.6);
+    margin-right: 3px;
+}
+
+.footer__item__company >ul>li>i{
+    font-size: 1.4em;
+    color:rgba(var(--red-rgb), 0.8);
+    margin-right: 3px;
+}
+.footer__item__tel > strong{
+    font-size: 1.4em;
+    margin-right: 10px!important;
+    font-weight: 500;
+}
+
+.footer__item__tel > a{
+    font-size: 1.5em;
+    color: var(--red);
+    font-weight: 700;
 }
