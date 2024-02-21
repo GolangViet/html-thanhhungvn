@@ -12,6 +12,9 @@
     .md__footer__child{
         border: 1px solid var(--color-border);
         border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     .md__footer__child >h3{
        display: flex;
@@ -74,6 +77,13 @@
     .footer__list{
         grid-template-columns: 2fr 1fr;
     }
+
+    .md__footer__child{       
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
 }
 
 @media (max-width: 768px){
