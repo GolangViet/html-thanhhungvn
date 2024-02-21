@@ -109,6 +109,15 @@ const mainApp = (function () {
         });        
     }
 
+    const mbFooterChildren = () => {
+        const mbFooterChild = document.querySelectorAll(".md__footer__child");
+        mbFooterChild.forEach(function (item) {
+            item.addEventListener("click", function (evt) { 
+                evt.currentTarget.classList.toggle('open');
+            });
+        });
+    }
+
     return {
         init: function () {
             tabCategoryMenuHover();
@@ -117,6 +126,7 @@ const mainApp = (function () {
             headerSticky();
             mbMenusBar();
             mbMenuChildren();
+            mbFooterChildren();
         },
     };
 })();

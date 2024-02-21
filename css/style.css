@@ -1740,15 +1740,14 @@ body{
 }
 
 .footer__item__form > ul{
-    list-style: revert;
     font-size: 1rem;
-    padding: 0px 1.5em;  
+    padding: 0px;  
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
 
 .footer__item__form > ul >li{
-    font-size: 1.2em;
+    font-size: 1.1em;
 }
 
 .footer__form__advisory{

@@ -121,6 +121,7 @@ p:last-child {
     position: relative;
 }
 
+
 /* Container */
 
 @media (min-width: 576px) {
@@ -129,7 +130,7 @@ p:last-child {
         padding-left: 10px;
         padding-right: 10px;
         max-width: 90% !important;
-    }
+    }   
 }
 
 @media (min-width: 768px) {
@@ -191,4 +192,13 @@ p:last-child {
 
 .d-flex{
     display: flex;
+}
+
+.xs-block{
+    display: none;
+}
+@media (max-width: 575px){
+    .xs-block{
+        display: block;
+    }
 }
