@@ -1808,3 +1808,40 @@ body{
     border: none;
     border-radius: 2em;
 }
+
+.footer__bottom{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1rem;
+    color: var(--color-body);
+    border-top: 1px solid var(--color-border);
+    padding-top: 2em;
+}
+.footer__bottom >p{
+    font-size: 1.3em;
+    margin-bottom: 0px;
+}
+
+.footer__bottom>ul{
+    font-size: 1.3em;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+.footer__bottom>ul>li{
+    position: relative;
+    z-index: 1;
+}
+.footer__bottom>ul>li:not(:last-child)::before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -0.5em;
+    transform: translateY(-50%);
+    height: 0.9em;
+    width: 1px;
+    background-color: var(--color-body);
+    z-index: -1;
+}

@@ -137,6 +137,16 @@
         -webkit-box-orient: vertical;
     }
 
+    .footer__bottom{
+        flex-direction: column;
+        gap: 1em;
+    }
+    .footer__bottom>p{
+        order:2;
+    }
+    .footer__bottom>ul{
+        order:1;
+    }
  
 }
 
