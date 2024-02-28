@@ -202,3 +202,10 @@ p:last-child {
         display: block;
     }
 }
+
+.gap-1{
+    gap:1em;
+}
+.gap-2{
+    gap:2em;
+}
