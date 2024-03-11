@@ -3,7 +3,7 @@
     --black: #000000;
     --red: #950505;   
     --green: #44b556;
-    --color-border: #e6e3f1;
+    --color-border: #e4e4e6;
     --black-opacity: rgba(0, 0, 0, 0.04);
     --color-body: #6b7385;
     --white-rgb: 255,255,255;
@@ -50,7 +50,7 @@ body{
 }
 
 .border-bottom{
-    border-bottom: 1px solid var(--color-body);
+    border-bottom: 1px solid var(--color-border);
 }
 
 .pb-1{
@@ -179,8 +179,11 @@ body{
     }
 }
 
-
 /* --- Header top */
+.header{
+    position: relative;
+    z-index: 99;
+}
 .header-top{
     background-color: var(--red);
     color: var(--white);
@@ -663,7 +666,7 @@ body{
     opacity: 0;
     transition: opacity 0.4s linear, clip 0.6s linear, visibility 0s 0.4s;
     transform: translateZ(0);
-  
+    z-index: 9999;
 }
 .megamenu--grid3{
     width: 90em;
@@ -852,6 +855,7 @@ body{
     opacity: 1;
     clip: rect(0px, 200vw, 200vh, 0px);
     transition: clip 0.6s linear, opacity 0.2s linear;
+    z-index: 999;
 }
 
 .search__dropdown__wrapper{
@@ -974,7 +978,7 @@ body{
     height: 100%;
     background: rgba(0, 0, 0, 0.7);
     backdrop-filter: blur(15px);
-    z-index: -1;
+    z-index: 99;
     transition: all 0.7s;
 }
 .btn__search.open .ri-search-2-line::before{
