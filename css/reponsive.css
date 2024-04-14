@@ -95,6 +95,15 @@
         margin-bottom: 0px;
     }
 
+    /* list news item */
+    .news__item.mb__news__item--list{
+        display: flex!important;
+        flex-direction: column;
+    }
+    .news__item.mb__news__item--list .news__thumb {
+        height: 150px;
+    }
+
 }
 @media (min-width: 576px) and (max-width: 768px){
     .order-md-1{
