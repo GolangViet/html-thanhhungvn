@@ -1157,3 +1157,11 @@ p:last-child {
 
   
 }
+
+.g-3,.gx-3 {
+    --bs-gutter-x: 1rem
+}
+
+.g-3,.gy-3 {
+    --bs-gutter-y: 1rem
+}
