@@ -762,8 +762,32 @@
             </div>            
             <aside class="section__grid__aside border">
                 <div class="box-cal-truck border">
-                    <h2>Tính cưới xe tải</h2>
-                    <p>Chọn điểm đi - điểm đến và điền thông tin bên dưới để Thành Hưng sẽ tính chi phí khoảng khi chọn vận chuyển</p>
+                    <h3><span><i class="ri-pin-distance-line"></i></span> Tính cưới xe tải</h3>
+                    <p class="mb-5">Chọn điểm đi - điểm đến và điền thông tin bên dưới để Thành Hưng sẽ tính cước phí</p>
+                    <form method="POST" action="#">
+                        <div class="mb-3">                          
+                            <input class="form-control" id="source-input" name="source" placeholder="Nhập điểm đi *"/>
+                        </div>
+                        <div class="mb-3">                           
+                            <input class="form-control" id="destination-input" name="destination" placeholder="Nhập điểm đến *"/>
+                        </div>
+                        <div class="mb-3">                           
+                            <input class="form-control" id="name-input" name="name" placeholder="Nhập tên "/>
+                        </div>
+                        <div class="mb-3">                           
+                            <input class="form-control" id="phone-input" name="phone" placeholder="Nhập phone *"/>
+                        </div>
+                        <div class="mb-3">                            
+                            <select class="form-select" name="">
+                                <option value="">Chọn xe tải</option>
+                                <option value="truck_900">Xe tải 900Kg</option>
+                                <option value="truck_12">Xe tấn 1.2</option>
+                            </select>
+                        </div>
+                        <div class="d-flex">
+                            <button type="submit" class="form-btn">Tính cước</button>
+                        </div>                       
+                    </form>
                 </div>
             </aside>
         </div>
@@ -774,12 +798,30 @@
                 <a href="#" title="">Vận chuyển phổ biến</a>
             </h2>
             <div class="row g-3">
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                <div class="col-lg-3 col-md-6 col-sm-6 col-6">
+
+                    <a class="category-item" href="#">
+                        <div class="category-inner">
+                            <div class="thumbnail">
+                                <img src="	https://thanhhungvn.vn/static/img/editor/1712825091149-1712825097.png" alt="">
+                            </div>
+                            <div class="content">
+                                <h3 class="title">Chuyển nhà trọn gói</h3>
+                                <div class="read-more-btn">
+                                    <span class="tx-hover-line">Xem thêm<i class="ri-arrow-right-s-line"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-6 col-6">
 
                     <a class="category-item">
                         <div class="category-inner">
                             <div class="thumbnail">
-                                <img src="https://thanhhungvn.vn/static/img/posts/kinh-nghiem-don-dep-nha-cua-dn-tet-sieu-sach-1706780064.jpg" alt="">
+                                <img src="https://thanhhungvn.vn/static/img/editor/1712825091149-1712825097.png" alt="">
                             </div>
                             <div class="content">
                                 <h3 class="title">Chuyển Biệt thự</h3>
@@ -792,15 +834,15 @@
 
                 </div>
 
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                <div class="col-lg-3 col-md-6 col-sm-6 col-6">
 
                     <a class="category-item">
                         <div class="category-inner">
                             <div class="thumbnail">
-                                <img src="https://thanhhungvn.vn/static/img/posts/kinh-nghiem-don-dep-nha-cua-dn-tet-sieu-sach-1706780064.jpg" alt="">
+                                <img src="https://thanhhungvn.vn/static/img/editor/1712825091149-1712825097.png" alt="">
                             </div>
                             <div class="content">
-                                <h3 class="title">Chuyển Biệt thự</h3>
+                                <h3 class="title">Chuyển văn phòng</h3>
                                 <div class="read-more-btn">
                                     <span class="tx-hover-line">Xem thêm<i class="ri-arrow-right-s-line"></i></span>
                                 </div>
@@ -810,15 +852,15 @@
 
                 </div>
 
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                <div class="col-lg-3 col-md-6 col-sm-6 col-6">
 
                     <a class="category-item">
                         <div class="category-inner">
                             <div class="thumbnail">
-                                <img src="https://thanhhungvn.vn/static/img/posts/kinh-nghiem-don-dep-nha-cua-dn-tet-sieu-sach-1706780064.jpg" alt="">
+                                <img src="https://thanhhungvn.vn/static/img/editor/1712825091149-1712825097.png" alt="">
                             </div>
                             <div class="content">
-                                <h3 class="title">Chuyển Biệt thự</h3>
+                                <h3 class="title">Chuyển nhà giá rẻ</h3>
                                 <div class="read-more-btn">
                                     <span class="tx-hover-line">Xem thêm<i class="ri-arrow-right-s-line"></i></span>
                                 </div>
@@ -828,15 +870,15 @@
 
                 </div>
 
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                <div class="col-lg-3 col-md-6 col-sm-6 col-6">
 
                     <a class="category-item">
                         <div class="category-inner">
                             <div class="thumbnail">
-                                <img src="https://thanhhungvn.vn/static/img/posts/kinh-nghiem-don-dep-nha-cua-dn-tet-sieu-sach-1706780064.jpg" alt="">
+                                <img src="https://thanhhungvn.vn/static/img/editor/1712825091149-1712825097.png" alt="">
                             </div>
                             <div class="content">
-                                <h3 class="title">Chuyển Biệt thự</h3>
+                                <h3 class="title">Chuyển kho xưởng</h3>
                                 <div class="read-more-btn">
                                     <span class="tx-hover-line">Xem thêm<i class="ri-arrow-right-s-line"></i></span>
                                 </div>
@@ -846,15 +888,15 @@
 
                 </div>
 
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                <div class="col-lg-3 col-md-6 col-sm-6 col-6">
 
                     <a class="category-item">
                         <div class="category-inner">
                             <div class="thumbnail">
-                                <img src="https://thanhhungvn.vn/static/img/posts/kinh-nghiem-don-dep-nha-cua-dn-tet-sieu-sach-1706780064.jpg" alt="">
+                                <img src="https://thanhhungvn.vn/static/img/editor/1712825091149-1712825097.png" alt="">
                             </div>
                             <div class="content">
-                                <h3 class="title">Chuyển Biệt thự</h3>
+                                <h3 class="title">Dọn nhà</h3>
                                 <div class="read-more-btn">
                                     <span class="tx-hover-line">Xem thêm<i class="ri-arrow-right-s-line"></i></span>
                                 </div>
@@ -863,6 +905,118 @@
                     </a>
 
                 </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-6 col-6">
+
+                    <a class="category-item">
+                        <div class="category-inner">
+                            <div class="thumbnail">
+                                <img src="https://thanhhungvn.vn/static/img/editor/1712825091149-1712825097.png" alt="">
+                            </div>
+                            <div class="content">
+                                <h3 class="title">Dọn nhà trọ</h3>
+                                <div class="read-more-btn">
+                                    <span class="tx-hover-line">Xem thêm<i class="ri-arrow-right-s-line"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-6 col-6">
+
+                    <a class="category-item">
+                        <div class="category-inner">
+                            <div class="thumbnail">
+                                <img src="https://thanhhungvn.vn/static/img/editor/1712825091149-1712825097.png" alt="">
+                            </div>
+                            <div class="content">
+                                <h3 class="title">Di dời két sắt</h3>
+                                <div class="read-more-btn">
+                                    <span class="tx-hover-line">Xem thêm<i class="ri-arrow-right-s-line"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-6 col-6">
+
+                    <a class="category-item">
+                        <div class="category-inner">
+                            <div class="thumbnail">
+                                <img src="https://thanhhungvn.vn/static/img/editor/1712825091149-1712825097.png" alt="">
+                            </div>
+                            <div class="content">
+                                <h3 class="title">Di dời đàn piano</h3>
+                                <div class="read-more-btn">
+                                    <span class="tx-hover-line">Xem thêm<i class="ri-arrow-right-s-line"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-6 col-6">
+
+                    <a class="category-item">
+                        <div class="category-inner">
+                            <div class="thumbnail">
+                                <img src="https://thanhhungvn.vn/static/img/editor/1712825091149-1712825097.png" alt="">
+                            </div>
+                            <div class="content">
+                                <h3 class="title">Dọn trả mặt bằng</h3>
+                                <div class="read-more-btn">
+                                    <span class="tx-hover-line">Xem thêm<i class="ri-arrow-right-s-line"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-6 col-6">
+
+                    <a class="category-item">
+                        <div class="category-inner">
+                            <div class="thumbnail">
+                                <img src="https://thanhhungvn.vn/static/img/editor/1712825091149-1712825097.png" alt="">
+                            </div>
+                            <div class="content">
+                                <h3 class="title">Chuyển nhà phố</h3>
+                                <div class="read-more-btn">
+                                    <span class="tx-hover-line">Xem thêm<i class="ri-arrow-right-s-line"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-6 col-6">
+
+                    <a class="category-item">
+                        <div class="category-inner">
+                            <div class="thumbnail">
+                                <img src="https://thanhhungvn.vn/static/img/editor/1712825091149-1712825097.png" alt="">
+                            </div>
+                            <div class="content">
+                                <h3 class="title">Chuyển quán cafe</h3>
+                                <div class="read-more-btn">
+                                    <span class="tx-hover-line">Xem thêm<i class="ri-arrow-right-s-line"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+
+
+
+
             </div>
            
         </div>
