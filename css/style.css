@@ -2058,6 +2058,7 @@ body{
  */
 .category-item{
     position: relative;
+    display: block;
     overflow: hidden;
     z-index: 2;
 }
