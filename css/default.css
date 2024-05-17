@@ -196,7 +196,7 @@ p:last-child {
 }
 
 .xs-block{
-    display: none;
+    display: none!important;
 }
 @media (max-width: 575px){
     .xs-block{
@@ -1238,4 +1238,10 @@ label{
     transition: border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-box-shadow .15s ease-in-out
+}
+
+.news__col__2{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
 }
