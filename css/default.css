@@ -1163,6 +1163,10 @@ p:last-child {
     padding:3rem 0px;
 }
 
+.pt-3{
+    padding-top: 3rem;
+}
+
 .mb-3{
     margin-bottom: 1rem;
 }
@@ -1245,3 +1249,16 @@ label{
     grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
 }
+
+@-webkit-keyframes hvr-icon-pulse-shrink {
+    to {
+      -webkit-transform: scale(0.8);
+      transform: scale(0.8);
+    }
+  }
+  @keyframes hvr-icon-pulse-shrink {
+    to {
+      -webkit-transform: scale(0.8);
+      transform: scale(0.8);
+    }
+  }

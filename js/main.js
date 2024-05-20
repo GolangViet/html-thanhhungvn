@@ -118,6 +118,27 @@ const mainApp = (function () {
         });
     }
 
+    document.querySelector('.video-main__video').addEventListener('click', function(){				
+        var id = get_video_id(this.getAttribute('data-url'));
+        document.querySelector('.video-main__video').innerHTML = '<iframe src="https://www.youtube.com/embed/' + id + '?feature=oembed&autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>';
+    });
+
+    var list_video = document.querySelectorAll('.video-list .video__item');
+    for (const video of list_video) {
+        video.addEventListener('click', () => {	
+        
+        var act = document.querySelector('.video-list .video__item.active');
+        if (act !== null){
+            act.classList.remove("active");
+        }
+        
+        video.classList.add("active");
+        var id = get_video_id(video.getAttribute('data-url'));
+        document.querySelector('.video-main__video').innerHTML = '<iframe src="https://www.youtube.com/embed/' + id + '?feature=oembed&autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>';
+        });
+    }
+    
+
     return {
         init: function () {
             tabCategoryMenuHover();
@@ -135,6 +156,12 @@ const mainApp = (function () {
 document.addEventListener("DOMContentLoaded", function (event) {
     mainApp.init();
 });
+
+function get_video_id(url) {
+    var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/;
+    var match = url.match(regExp);
+    return (match && match[7].length == 11) ? match[7] : false;
+}
 
 
   
