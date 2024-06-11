@@ -137,6 +137,28 @@ const mainApp = (function () {
         document.querySelector('.video-main__video').innerHTML = '<iframe src="https://www.youtube.com/embed/' + id + '?feature=oembed&autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>';
         });
     }
+
+    const tabContents = () => {
+        const tabLinks = document.querySelectorAll('.tab-link');
+        if (tabLinks.length > 0){
+            tabLinks.forEach(function(link) {
+                link.addEventListener('click', function(event) {
+                    openTab(event, event.currentTarget.getAttribute('data-tab'));
+                });
+            });
+        }
+        function openTab(event, tabId) {
+            var tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(function(tab) {
+                tab.classList.remove('active');
+            });
+            tabLinks.forEach(function(link) {
+                link.classList.remove('active');
+            });
+            document.getElementById(tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+    }
     
 
     return {
@@ -148,6 +170,7 @@ const mainApp = (function () {
             mbMenusBar();
             mbMenuChildren();
             mbFooterChildren();
+            tabContents();
         },
     };
 })();

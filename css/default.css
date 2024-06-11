@@ -1255,10 +1255,10 @@ label{
       -webkit-transform: scale(0.8);
       transform: scale(0.8);
     }
-  }
-  @keyframes hvr-icon-pulse-shrink {
+}
+@keyframes hvr-icon-pulse-shrink {
     to {
       -webkit-transform: scale(0.8);
       transform: scale(0.8);
     }
-  }
+}
